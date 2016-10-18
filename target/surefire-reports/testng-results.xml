@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="139" started-at="2016-10-18T12:55:23Z" finished-at="2016-10-18T12:55:23Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="139" started-at="2016-10-18T12:55:23Z" finished-at="2016-10-18T12:55:23Z">
+      <class name="exercises.gui.conversorTest">
+        <test-method status="PASS" signature="testRadiensToDegrees()[pri:0, instance:testRadiensToDegrees(exercises.gui.conversorTest)]" name="testRadiensToDegrees" duration-ms="12" started-at="2016-10-18T14:55:23Z" finished-at="2016-10-18T14:55:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRadiensToDegrees -->
+        <test-method status="PASS" signature="testDegreesToRadiens()[pri:0, instance:testDegreesToRadiens(exercises.gui.conversorTest)]" name="testDegreesToRadiens" duration-ms="0" started-at="2016-10-18T14:55:23Z" finished-at="2016-10-18T14:55:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDegreesToRadiens -->
+      </class> <!-- exercises.gui.conversorTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

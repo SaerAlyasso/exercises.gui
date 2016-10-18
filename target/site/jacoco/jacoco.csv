@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+exercises.gui,classes,Conversor,0,19,0,0,0,5,0,3,0,3
+exercises.gui,Main,MainFrame.new Runnable() {...},16,0,0,0,7,0,2,0,2,0
+exercises.gui,Main,MainFrame.new ActionListener() {...},53,0,2,0,10,0,3,0,2,0
+exercises.gui,Main,MainFrame.new ActionListener() {...},53,0,2,0,10,0,3,0,2,0
+exercises.gui,Main,MainFrame,178,0,0,0,35,0,3,0,3,0

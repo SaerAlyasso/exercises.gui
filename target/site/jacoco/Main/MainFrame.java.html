@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">exercises.gui</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">MainFrame.java</span></div><h1>MainFrame.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.awt.EventQueue;
+import java.awt.Window;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import classes.Conversor;
+
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class MainFrame {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+<span class="nc" id="L21">	private JLabel lblResult = new JLabel(&quot;Result:&quot;);</span>
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L27">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L30">					MainFrame window = new MainFrame();</span>
+<span class="nc" id="L31">					window.frame.setVisible(true);</span>
+<span class="nc" id="L32">				} catch (Exception e) {</span>
+<span class="nc" id="L33">					e.printStackTrace();</span>
+<span class="nc" id="L34">				}</span>
+<span class="nc" id="L35">			}</span>
+		});
+<span class="nc" id="L37">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="nc" id="L42">	public MainFrame() {</span>
+<span class="nc" id="L43">		initialize();</span>
+<span class="nc" id="L44">	}</span>
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+<span class="nc" id="L50">		frame = new JFrame();</span>
+<span class="nc" id="L51">		frame.setBounds(100, 100, 450, 300);</span>
+<span class="nc" id="L52">		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L53">		frame.getContentPane().setLayout(null);</span>
+		//JLabel lblResult = new JLabel(&quot;Result:&quot;);
+		//lblResult.setBounds(12, 200, 200, 15);
+<span class="nc" id="L56">		frame.getContentPane().add(lblResult);</span>
+		
+<span class="nc" id="L58">		JLabel lblEnterThe = new JLabel(&quot;Enter the value in degrees&quot;);</span>
+<span class="nc" id="L59">		lblEnterThe.setBounds(12, 31, 200, 15);</span>
+<span class="nc" id="L60">		frame.getContentPane().add(lblEnterThe);</span>
+		
+<span class="nc" id="L62">		textField = new JTextField();</span>
+<span class="nc" id="L63">		textField.setBounds(12, 58, 114, 19);</span>
+<span class="nc" id="L64">		frame.getContentPane().add(textField);</span>
+<span class="nc" id="L65">		textField.setColumns(10);</span>
+		
+<span class="nc" id="L67">		JLabel lblNewLabel = new JLabel(&quot;Enter the value in radiens&quot;);</span>
+<span class="nc" id="L68">		lblNewLabel.setBounds(12, 130, 200, 15);</span>
+<span class="nc" id="L69">		frame.getContentPane().add(lblNewLabel);</span>
+		
+<span class="nc" id="L71">		textField_1 = new JTextField();</span>
+<span class="nc" id="L72">		textField_1.setBounds(12, 157, 114, 19);</span>
+<span class="nc" id="L73">		frame.getContentPane().add(textField_1);</span>
+<span class="nc" id="L74">		textField_1.setColumns(10);</span>
+		
+		//JLabel lblResult = new JLabel(&quot;Result:&quot;);
+<span class="nc" id="L77">		lblResult.setBounds(12, 200, 200, 15);</span>
+		//frame.getContentPane().add(lblResult);
+		
+<span class="nc" id="L80">		JButton btnToRadiens = new JButton(&quot;to radiens&quot;);</span>
+<span class="nc" id="L81">		btnToRadiens.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+				
+<span class="nc" id="L84">				Conversor convers = new Conversor();</span>
+				
+<span class="nc bnc" id="L86" title="All 2 branches missed.">				if(textField.getText().isEmpty()){</span>
+					
+<span class="nc" id="L88">					lblResult.setText(&quot;No degree found, try again&quot;);</span>
+				}
+				else{
+<span class="nc" id="L91">				double degree = Double.parseDouble(textField.getText());</span>
+				
+<span class="nc" id="L93">				double result = convers.DegreesToRadiens(degree);</span>
+				
+<span class="nc" id="L95">				String text = Double.toString(result);</span>
+				
+<span class="nc" id="L97">				lblResult.setText(&quot;Result: &quot;+text);</span>
+<span class="nc" id="L98">				textField.setText(null);</span>
+				}
+<span class="nc" id="L100">			}</span>
+		});
+<span class="nc" id="L102">		btnToRadiens.setBounds(9, 233, 117, 25);</span>
+<span class="nc" id="L103">		frame.getContentPane().add(btnToRadiens);</span>
+		
+<span class="nc" id="L105">		JButton btnToDegrees = new JButton(&quot;to degrees&quot;);</span>
+<span class="nc" id="L106">		btnToDegrees.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+				
+<span class="nc" id="L109">				Conversor convers = new Conversor();</span>
+				
+<span class="nc bnc" id="L111" title="All 2 branches missed.">				if(textField_1.getText().isEmpty()){</span>
+<span class="nc" id="L112">					lblResult.setText(&quot;No radien found, try again&quot;);</span>
+				}
+				else{
+<span class="nc" id="L115">				double radien = Double.parseDouble(textField_1.getText());</span>
+				
+<span class="nc" id="L117">				double result = convers.RadiensToDegrees(radien);</span>
+				
+<span class="nc" id="L119">				String text = Double.toString(result);</span>
+<span class="nc" id="L120">				lblResult.setText(&quot;Result: &quot;+text);</span>
+<span class="nc" id="L121">				textField_1.setText(null);</span>
+				}
+				
+<span class="nc" id="L124">			}</span>
+		});
+<span class="nc" id="L126">		btnToDegrees.setBounds(159, 233, 117, 25);</span>
+<span class="nc" id="L127">		frame.getContentPane().add(btnToDegrees);</span>
+<span class="nc" id="L128">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
