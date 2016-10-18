@@ -76,7 +76,7 @@ public class MainFrame {
 		//JLabel lblResult = new JLabel("Result:");
 		lblResult.setBounds(12, 200, 200, 15);
 		//frame.getContentPane().add(lblResult);
-		
+		//..
 		JButton btnToRadiens = new JButton("to radiens");
 		btnToRadiens.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
